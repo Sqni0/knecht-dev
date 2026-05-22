@@ -1,0 +1,13 @@
+# Screenshots & temp files
+temporary screenshots/
+image.png
+
+# Claude Code tooling
+.claude/
+.agents/
+.mcp.json
+skills-lock.json
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  knecht.dev — inverse logo mark
+  Use on dark tiles (#272729, #2a2a2c, #131313) and surface-black (#000).
+  Blue is shifted to primary-on-dark (#2997ff) for accessibility on dark.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 120" role="img" aria-labelledby="t">
+  <title id="t">knecht.dev</title>
+  <path fill="#ffffff" d="M0 0 H24 V48 L72 0 V24 L36 60 L72 96 V120 L24 72 V120 H0 Z"/>
+  <rect fill="#2997ff" x="88" y="96" width="24" height="24"/>
+</svg>

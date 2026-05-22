@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leistungen — knecht.dev</title>
+  <meta name="description" content="Webentwicklung, Design, SEO & Performance und Hosting & Wartung — alle Leistungen von knecht.dev im Überblick.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="page-transition"></div>
+<div id="scroll-progress"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="gn">
+  <div class="gn-inner">
+    <a href="index.html" class="gn-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 120" aria-hidden="true" style="height: 20px; width: auto; flex-shrink: 0;"><path fill="#ffffff" d="M0 0 H24 V48 L72 0 V24 L36 60 L72 96 V120 L24 72 V120 H0 Z"/><rect fill="#0265cc" x="88" y="96" width="24" height="24"/></svg>
+      knecht.dev
+    </a>
+    <div class="gn-links">
+      <a href="leistungen.html" class="nav-active">Leistungen</a>
+      <a href="preise.html">Preise</a>
+      <a href="ueber.html">Über</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html" class="gn-cta">Projekt anfragen →</a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="mob-menu" aria-hidden="true">
+  <a href="leistungen.html" onclick="closeMenu()">Leistungen</a>
+  <a href="preise.html"     onclick="closeMenu()">Preise</a>
+  <a href="ueber.html"      onclick="closeMenu()">Über</a>
+  <a href="kontakt.html"    onclick="closeMenu()">Kontakt</a>
+  <a href="kontakt.html"    onclick="closeMenu()" class="accent">Projekt anfragen →</a>
+</div>
+
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero tile">
+  <div class="wrap">
+    <h1 class="t-lg page-hero-h1">Was ich für dich baue.</h1>
+    <p class="t-airy page-hero-sub" style="margin-top: 14px;">
+      Vier Bereiche, ein Ansprechpartner. Du bekommst alles aus einer Hand — und du weißt immer, mit wem du redest.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ SERVICES ═══ -->
+<section class="tile tile-dark">
+  <div class="wrap">
+    <div class="grid-svc">
+
+      <div class="svc-card">
+        <div style="margin-bottom: 16px;">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <path d="M7 10L3 14L7 18M21 10L25 14L21 18M16.5 6L11.5 22" stroke="#0066cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="t-card-h" style="margin-bottom: 8px;">Webentwicklung</h3>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Maßgeschneiderte Websites und Web-Apps mit modernem Tech-Stack. Keine Templates, kein WordPress-Baukasten. Sauberer Code, schneller Build, gute Lighthouse-Scores.
+        </p>
+        <ul>
+          <li>Landing Pages &amp; Corporate Sites</li>
+          <li>Custom Web-Apps &amp; Tools</li>
+          <li>Headless CMS Integration</li>
+          <li>API-Anbindungen</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div style="margin-bottom: 16px;">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect x="3" y="4" width="22" height="16" rx="2" stroke="#0066cc" stroke-width="1.5"/>
+            <path d="M9 26H19M14 20V26" stroke="#0066cc" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M7 10h6M7 13h4" stroke="#0066cc" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="t-card-h" style="margin-bottom: 8px;">Design, das funktioniert</h3>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Design ist kein Selbstzweck. Jede Section, jedes Element muss einen Job erledigen — Besucher zu Kunden machen. Klares Layout, schnelle Ladezeiten, Mobile-First.
+        </p>
+        <ul>
+          <li>UI/UX Konzeption</li>
+          <li>Responsive Design</li>
+          <li>Design Systems</li>
+          <li>Prototyping &amp; Wireframes</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div style="margin-bottom: 16px;">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <path d="M4 20L9 14L13 17L18 10L24 16" stroke="#0066cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="10" r="1.5" fill="#0066cc"/>
+          </svg>
+        </div>
+        <h3 class="t-card-h" style="margin-bottom: 8px;">SEO &amp; Performance</h3>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Eine schöne Site ohne Traffic ist eine teure Visitenkarte. Ich optimiere technisches SEO, Core Web Vitals und sorge dafür, dass Google deine Seite versteht.
+        </p>
+        <ul>
+          <li>Technisches SEO Audit</li>
+          <li>Core Web Vitals Optimierung</li>
+          <li>Strukturierte Daten (Schema.org)</li>
+          <li>OnPage-Optimierung</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div style="margin-bottom: 16px;">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect x="4" y="5" width="20" height="7" rx="2" stroke="#0066cc" stroke-width="1.5"/>
+            <rect x="4" y="16" width="20" height="7" rx="2" stroke="#0066cc" stroke-width="1.5"/>
+            <circle cx="8.5" cy="8.5" r="1" fill="#0066cc"/>
+            <circle cx="8.5" cy="19.5" r="1" fill="#0066cc"/>
+          </svg>
+        </div>
+        <h3 class="t-card-h" style="margin-bottom: 8px;">Hosting &amp; Wartung</h3>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Du baust dein Business. Ich kümmere mich um Updates, Backups, Security-Patches und Monitoring. SSL inklusive, DSGVO-konform, Server in Deutschland.
+        </p>
+        <ul>
+          <li>Managed Hosting in Deutschland</li>
+          <li>Automatische Backups &amp; SSL</li>
+          <li>Updates &amp; Security-Patches</li>
+          <li>Uptime-Monitoring</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div style="margin-bottom: 16px;">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect x="3" y="9" width="8" height="6" rx="1.5" stroke="#0066cc" stroke-width="1.5"/>
+            <rect x="17" y="5" width="8" height="6" rx="1.5" stroke="#0066cc" stroke-width="1.5"/>
+            <rect x="17" y="17" width="8" height="6" rx="1.5" stroke="#0066cc" stroke-width="1.5"/>
+            <path d="M11 12h3l3-4" stroke="#0066cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11 12h3l3 4" stroke="#0066cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="t-card-h" style="margin-bottom: 8px;">Automatisierung mit n8n</h3>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Täglich wiederkehrende Aufgaben automatisch abarbeiten — ohne dass jemand händisch Daten zwischen Systemen kopiert. Einmal eingerichtet, läuft es von selbst.
+        </p>
+        <ul>
+          <li>Workflow-Einrichtung mit n8n</li>
+          <li>CRM-Anbindungen</li>
+          <li>Datensynchronisierung zwischen Systemen</li>
+          <li>API-Verbindungen &amp; Webhooks</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div style="margin-bottom: 16px;">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <path d="M14 4L4 9.5V18.5L14 24L24 18.5V9.5L14 4Z" stroke="#0066cc" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M4 9.5L14 15L24 9.5" stroke="#0066cc" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M14 15V24" stroke="#0066cc" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="t-card-h" style="margin-bottom: 8px;">3D-Elemente &amp; besondere Effekte</h3>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Mit Three.js lassen sich 3D-Modelle direkt im Browser anzeigen — drehbar, zoombar, interaktiv. Nicht für jede Seite sinnvoll, aber bei Produkten, Architektur oder Konfiguratoren ein echter Hingucker.
+        </p>
+        <ul>
+          <li>Three.js 3D-Modelle im Browser</li>
+          <li>Interaktive Konfiguratoren</li>
+          <li>Animierte Hintergründe &amp; Effekte</li>
+          <li>WebGL-basierte UI-Elemente</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ WAS ICH NICHT MACHE ═══ -->
+<section class="tile tile-parch">
+  <div class="wrap">
+    <div style="max-width: 720px; margin: 0 auto;">
+      <h2 class="t-md" style="color: var(--ink); margin-bottom: 12px;">Was ich nicht mache.</h2>
+      <p class="t-body" style="color: var(--ink-muted); margin-bottom: 28px;">
+        Damit hier keiner falsche Erwartungen mitnimmt. Für all das gibt es Spezialisten, die das besser machen als ich.
+      </p>
+      <ul class="no-list">
+        <li>WordPress-Anpassungen an vorhandenen Themes</li>
+        <li>Shopify-Stores</li>
+        <li>Reine Grafikdesign-Aufträge ohne Web-Bezug</li>
+        <li>SEO-Consulting ohne dazugehörige Website</li>
+        <li>Social-Media-Betreuung</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ PROZESS ═══ -->
+<section class="tile tile-parch">
+  <div class="wrap">
+    <div style="text-align: center; margin-bottom: 64px;">
+      <h2 class="t-lg">Vom Gespräch zur Live-Site —<br>in vier Schritten.</h2>
+    </div>
+    <div class="grid-proc">
+      <div class="proc-line" aria-hidden="true" style="background: rgba(0,0,0,0.08);"></div>
+
+      <div>
+        <div class="proc-num" style="color: rgba(0,0,0,0.08);">01</div>
+        <h3 class="t-strong" style="color: var(--ink); margin-bottom: 10px;">Kennenlernen</h3>
+        <p class="t-cap" style="color: var(--ink-muted);">
+          30 Minuten Call. Du erzählst, was du brauchst. Ich höre zu und sage dir ehrlich, ob ich der Richtige für das Projekt bin.
+        </p>
+      </div>
+
+      <div>
+        <div class="proc-num" style="color: rgba(0,0,0,0.08);">02</div>
+        <h3 class="t-strong" style="color: var(--ink); margin-bottom: 10px;">Angebot</h3>
+        <p class="t-cap" style="color: var(--ink-muted);">
+          Festpreis, Zeitrahmen und klarer Leistungsumfang. Keine versteckten Kosten, keine "ab"-Schwurbel.
+        </p>
+      </div>
+
+      <div>
+        <div class="proc-num" style="color: rgba(0,0,0,0.08);">03</div>
+        <h3 class="t-strong" style="color: var(--ink); margin-bottom: 10px;">Build</h3>
+        <p class="t-cap" style="color: var(--ink-muted);">
+          Ich baue, du bekommst Zwischenstände. Feedback-Schleifen sind eingeplant. Du siehst die Site live wachsen.
+        </p>
+      </div>
+
+      <div>
+        <div class="proc-num" style="color: rgba(0,0,0,0.08);">04</div>
+        <h3 class="t-strong" style="color: var(--ink); margin-bottom: 10px;">Launch &amp; Support</h3>
+        <p class="t-cap" style="color: var(--ink-muted);">
+          Deine Site geht online. Hosting und Wartung übernehme ich gerne — oder ich übergebe alles sauber dokumentiert.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ CTA ═══ -->
+<section class="tile tile-dark" style="text-align: center;">
+  <div class="wrap">
+    <h2 class="t-lg" style="color: #fff; margin-bottom: 16px;">Bereit loszulegen?</h2>
+    <p class="t-body" style="color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 440px; margin-left: auto; margin-right: auto;">
+      Beschreib dein Projekt kurz. Ich melde mich innerhalb von 24 Stunden zurück.
+    </p>
+    <a href="kontakt.html" class="btn btn-primary" style="font-size: 17px; padding: 14px 32px;">Projekt anfragen →</a>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="background: var(--parchment); padding: 64px 0 40px 0;">
+  <div class="wrap-w">
+    <div class="grid-ft">
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 120" aria-hidden="true" style="height: 28px; width: auto; flex-shrink: 0;"><path fill="#1d1d1f" d="M0 0 H24 V48 L72 0 V24 L36 60 L72 96 V120 L24 72 V120 H0 Z"/><rect fill="#0265cc" x="88" y="96" width="24" height="24"/></svg>
+          <span style="font-size: 17px; font-weight: 600; color: var(--ink);">knecht.dev</span>
+        </div>
+        <p class="t-body" style="color: var(--ink-muted);">Webentwicklung aus dem Münsterland.</p>
+      </div>
+      <div>
+        <p class="t-cap-b" style="margin-bottom: 4px;">Navigation</p>
+        <a class="ft-link" href="leistungen.html">Leistungen</a>
+        <a class="ft-link" href="preise.html">Preise</a>
+        <a class="ft-link" href="ueber.html">Über</a>
+        <a class="ft-link" href="kontakt.html">Kontakt</a>
+      </div>
+      <div>
+        <p class="t-cap-b" style="margin-bottom: 4px;">Legal</p>
+        <a class="ft-link" href="#">Impressum</a>
+        <a class="ft-link" href="#">Datenschutz</a>
+        <a class="ft-link" href="#">AGB</a>
+      </div>
+      <div>
+        <p class="t-cap-b" style="margin-bottom: 4px;">Connect</p>
+        <a class="ft-link" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="ft-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="ft-link" href="mailto:hallo@knecht.dev">E-Mail</a>
+      </div>
+    </div>
+    <div style="height: 1px; background: var(--hairline); margin-bottom: 24px;"></div>
+    <p class="t-fine" style="color: var(--ink-muted);">© 2026 knecht.dev · Made with too much coffee in NRW.</p>
+  </div>
+</footer>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<script src="main.js"></script>
+</body>
+</html>

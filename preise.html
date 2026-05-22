@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preise — knecht.dev</title>
+  <meta name="description" content="Transparente Preise für Webentwicklung, Design und Hosting. One-Pager ab 600 €, Unternehmensseite ab 1.500 €, Web-Anwendung ab 2.500 €.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="page-transition"></div>
+<div id="scroll-progress"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="gn">
+  <div class="gn-inner">
+    <a href="index.html" class="gn-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 120" aria-hidden="true" style="height: 20px; width: auto; flex-shrink: 0;"><path fill="#ffffff" d="M0 0 H24 V48 L72 0 V24 L36 60 L72 96 V120 L24 72 V120 H0 Z"/><rect fill="#0265cc" x="88" y="96" width="24" height="24"/></svg>
+      knecht.dev
+    </a>
+    <div class="gn-links">
+      <a href="leistungen.html">Leistungen</a>
+      <a href="preise.html" class="nav-active">Preise</a>
+      <a href="ueber.html">Über</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html" class="gn-cta">Projekt anfragen →</a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="mob-menu" aria-hidden="true">
+  <a href="leistungen.html" onclick="closeMenu()">Leistungen</a>
+  <a href="preise.html"     onclick="closeMenu()">Preise</a>
+  <a href="ueber.html"      onclick="closeMenu()">Über</a>
+  <a href="kontakt.html"    onclick="closeMenu()">Kontakt</a>
+  <a href="kontakt.html"    onclick="closeMenu()" class="accent">Projekt anfragen →</a>
+</div>
+
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero tile">
+  <div class="wrap">
+    <h1 class="t-lg page-hero-h1">Transparente Preise. Keine Überraschungen.</h1>
+    <p class="t-airy page-hero-sub" style="margin-top: 14px;">
+      Die "ab"-Preise sind echte Einstiegspreise — kein "ab 99 €" mit Sternchen, hinter dem sich dann das Vierfache versteckt. Du bekommst vor Projektstart immer einen Festpreis.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ PAKETE ═══ -->
+<section class="tile tile-parch">
+  <div class="wrap-w">
+    <div class="grid-pkg">
+
+      <!-- One-Pager -->
+      <div class="price-card">
+        <p class="t-cap-b" style="color: var(--blue);">One-Pager</p>
+        <div class="price-num">ab 600 €</div>
+        <p class="t-cap" style="color: var(--ink-muted); margin-bottom: 0;">Für Selbstständige, kleine Läden, Event-Promos</p>
+        <ul>
+          <li>Individuelles Design (kein Template)</li>
+          <li>Responsive für Handy, Tablet, Desktop</li>
+          <li>Kontaktformular</li>
+          <li>Impressum &amp; Datenschutz nach DSGVO</li>
+          <li>Grundlegende SEO-Einrichtung</li>
+          <li>Eine Feedback-Runde nach der ersten Version</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn-ghost btn-sm" style="width: 100%;">Anfragen →</a>
+      </div>
+
+      <!-- Unternehmensseite (featured) -->
+      <div class="price-card featured">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
+          <p class="t-cap-b" style="color: var(--blue);">Unternehmensseite</p>
+          <span style="font-size: 11px; font-weight: 600; color: var(--blue); background: rgba(0,102,204,0.09); border-radius: 9999px; padding: 3px 10px;">Beliebt</span>
+        </div>
+        <div class="price-num">ab <span class="anno">1.500 €<svg class="anno-svg anno-circle" viewBox="0 0 120 48" preserveAspectRatio="none" aria-hidden="true"><path d="M10 24 Q12 5 60 3 Q108 1 112 24 Q110 43 60 45 Q12 43 10 24"/></svg></span></div>
+        <p class="t-cap" style="color: var(--ink-muted); margin-bottom: 0;">Handwerk, Dienstleister, kleinere Unternehmen</p>
+        <ul>
+          <li>Bis zu 6 Unterseiten</li>
+          <li>Individuelles Design, einheitliche Bildsprache</li>
+          <li>Vollständiges SEO-Setup</li>
+          <li>DSGVO-konformes Setup</li>
+          <li>Kontaktformular, optional Newsletter</li>
+          <li>Zwei Feedback-Runden</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn-primary btn-sm" style="width: 100%;">Anfragen →</a>
+      </div>
+
+      <!-- Web-Anwendung -->
+      <div class="price-card">
+        <p class="t-cap-b" style="color: var(--blue);">Web-Anwendung</p>
+        <div class="price-num">ab 2.500 €</div>
+        <p class="t-cap" style="color: var(--ink-muted); margin-bottom: 0;">Buchungssysteme, Kundenbereiche, interne Tools</p>
+        <ul>
+          <li>Individuelle Funktionalität (Login, DB, APIs)</li>
+          <li>Custom Design</li>
+          <li>Vollständiges SEO &amp; Performance Setup</li>
+          <li>Hosting &amp; SSL</li>
+          <li>Wird individuell kalkuliert — Festpreis nach Gespräch</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn-ghost btn-sm" style="width: 100%;">Anfragen →</a>
+      </div>
+
+    </div>
+
+    <!-- Automatisierungen Add-on -->
+    <div style="background: #fff; border: 1px solid var(--hairline); border-radius: 18px; padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+      <div>
+        <p class="t-strong" style="margin-bottom: 4px;">Automatisierungen (n8n) — ab 250 €</p>
+        <p class="t-cap" style="color: var(--ink-muted);">Einrichtung eines Workflows · Komplexere Setups individuell kalkuliert · Sobald läuft: vollautomatisch</p>
+      </div>
+      <a href="kontakt.html" class="btn btn-ghost btn-sm" style="white-space: nowrap;">Add-on anfragen →</a>
+    </div>
+
+    <!-- Wartung Add-on -->
+    <div style="background: #fff; border: 1px solid var(--hairline); border-radius: 18px; padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <p class="t-strong" style="margin-bottom: 4px;">Wartung &amp; Hosting — ab 30 €/Monat</p>
+        <p class="t-cap" style="color: var(--ink-muted);">Managed Hosting · Automatische Backups · SSL · Updates · Uptime-Monitoring · Kleine Änderungen</p>
+      </div>
+      <a href="kontakt.html" class="btn btn-ghost btn-sm" style="white-space: nowrap;">Add-on anfragen →</a>
+    </div>
+
+    <p class="t-cap" style="text-align: center; color: var(--ink-muted); margin-top: 20px;">
+      Du brauchst etwas anderes? <a href="kontakt.html" style="color: var(--blue); text-decoration: none; font-weight: 600;">Schreib mir.</a> Individuelle Angebote sind die Regel, nicht die Ausnahme.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ FAQ ═══ -->
+<section class="tile tile-dark">
+  <div class="wrap">
+    <div style="text-align: center; margin-bottom: 56px;">
+      <h2 class="t-lg" style="color: #fff;">Häufige Fragen.</h2>
+    </div>
+    <div style="max-width: 720px; margin: 0 auto;">
+
+      <div class="faq-item">
+        <button class="faq-q"><span>Bist du wirklich allein?</span><span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Ja. Wenn das Projekt zu groß für mich wird, sage ich das offen — und ziehe gegebenenfalls einen verlässlichen Freelancer dazu. Aber du bleibst immer mein Ansprechpartner.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q"><span>Arbeitest du auch mit WordPress?</span><span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Ja, wenn es zum Projekt passt. Ich bin nicht religiös bei Tech-Entscheidungen. Was zählt ist, dass das Endergebnis schnell, wartbar und sicher ist. WordPress-Anpassungen an vorhandenen Themes nehme ich allerdings nicht an.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q"><span>Wie lange dauert ein Projekt?</span><span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Ein One-Pager: 1–2 Wochen. Eine Unternehmensseite: 3–5 Wochen. Web-Anwendungen: 6 Wochen aufwärts. Du bekommst nach dem Erstgespräch einen konkreten Zeitplan.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q"><span>Was ist mit DSGVO und Rechtssicherheit?</span><span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Standard. Alle Sites werden DSGVO-konform aufgesetzt — Cookie-Banner, Impressum, Datenschutzerklärung. Für AGB empfehle ich eine anwaltliche Prüfung; ich kann dir Vorlagen-Anbieter empfehlen.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q"><span>Wo läuft das Hosting?</span><span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Standardmäßig auf Servern in Deutschland (Hetzner) oder bei Vercel mit EU-Region. Du entscheidest mit.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q"><span>Kann ich die Site später selbst pflegen?</span><span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Ja. Wenn du ein CMS willst (Sanity oder WordPress), kannst du Inhalte selbst anpassen. Bei Custom Code dokumentiere ich alles so, dass auch andere Entwickler weiterarbeiten können.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q"><span>Was wenn ich später unzufrieden bin?</span><span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Sag's mir. Direkt. Wir finden eine Lösung — entweder ich fixe es oder du bekommst dein Geld für den nicht erbrachten Teil zurück. Verträge regeln das im Detail.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ WAS SIE WISSEN SOLLTEN ═══ -->
+<section class="tile tile-light">
+  <div class="wrap">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <h2 class="t-lg" style="margin-bottom: 12px;">Was Sie sonst noch wissen sollten.</h2>
+      <p class="t-body" style="color: var(--ink-muted); max-width: 480px; margin: 0 auto;">
+        Kein Kleingedrucktes. Nur die Dinge, die Sie vor einem Gespräch kennen sollten.
+      </p>
+    </div>
+    <div class="grid-info">
+      <div class="info-card">
+        <p class="t-strong" style="color: var(--ink); margin-bottom: 8px;">Anzahlung</p>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Bei größeren Projekten arbeite ich mit 30 % Anzahlung. Der Rest wird fällig, wenn die Seite live geht — nicht vorher.
+        </p>
+      </div>
+      <div class="info-card">
+        <p class="t-strong" style="color: var(--ink); margin-bottom: 8px;">Festpreise statt Stundensatz</p>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Bei klar umrissenen Projekten gibt es einen Festpreis. Sie wissen vorher, was auf der Rechnung steht — und ich habe keinen Anreiz, langsam zu arbeiten.
+        </p>
+      </div>
+      <div class="info-card">
+        <p class="t-strong" style="color: var(--ink); margin-bottom: 8px;">Kostenloses Erstgespräch</p>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Telefonisch oder per Mail. Ich höre mir an, was Sie brauchen, und sage Ihnen ehrlich, ob das was für mich ist. Kein Vertrieb, keine Verpflichtung.
+        </p>
+      </div>
+      <div class="info-card">
+        <p class="t-strong" style="color: var(--ink); margin-bottom: 8px;">Ordentliche Rechnung</p>
+        <p class="t-body" style="color: var(--ink-muted);">
+          Sie bekommen eine ordentliche Rechnung mit ausgewiesener Umsatzsteuer, wie es sich gehört.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ CTA ═══ -->
+<section class="tile tile-parch" style="text-align: center;">
+  <div class="wrap">
+    <h2 class="t-lg" style="margin-bottom: 16px;">Noch Fragen? Einfach melden.</h2>
+    <p class="t-body" style="color: var(--ink-muted); margin-bottom: 32px; max-width: 440px; margin-left: auto; margin-right: auto;">
+      Ich beantworte gerne alle offenen Fragen — kostenlos und unverbindlich.
+    </p>
+    <a href="kontakt.html" class="btn btn-primary" style="font-size: 17px; padding: 14px 32px;">Kontakt aufnehmen →</a>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="background: var(--parchment); padding: 64px 0 40px 0;">
+  <div class="wrap-w">
+    <div class="grid-ft">
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 120" aria-hidden="true" style="height: 28px; width: auto; flex-shrink: 0;"><path fill="#1d1d1f" d="M0 0 H24 V48 L72 0 V24 L36 60 L72 96 V120 L24 72 V120 H0 Z"/><rect fill="#0265cc" x="88" y="96" width="24" height="24"/></svg>
+          <span style="font-size: 17px; font-weight: 600; color: var(--ink);">knecht.dev</span>
+        </div>
+        <p class="t-body" style="color: var(--ink-muted);">Webentwicklung aus dem Münsterland.</p>
+      </div>
+      <div>
+        <p class="t-cap-b" style="margin-bottom: 4px;">Navigation</p>
+        <a class="ft-link" href="leistungen.html">Leistungen</a>
+        <a class="ft-link" href="preise.html">Preise</a>
+        <a class="ft-link" href="ueber.html">Über</a>
+        <a class="ft-link" href="kontakt.html">Kontakt</a>
+      </div>
+      <div>
+        <p class="t-cap-b" style="margin-bottom: 4px;">Legal</p>
+        <a class="ft-link" href="#">Impressum</a>
+        <a class="ft-link" href="#">Datenschutz</a>
+        <a class="ft-link" href="#">AGB</a>
+      </div>
+      <div>
+        <p class="t-cap-b" style="margin-bottom: 4px;">Connect</p>
+        <a class="ft-link" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="ft-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="ft-link" href="mailto:hallo@knecht.dev">E-Mail</a>
+      </div>
+    </div>
+    <div style="height: 1px; background: var(--hairline); margin-bottom: 24px;"></div>
+    <p class="t-fine" style="color: var(--ink-muted);">© 2026 knecht.dev · Made with too much coffee in NRW.</p>
+  </div>
+</footer>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über mich — knecht.dev</title>
+  <meta name="description" content="Santino, 18, Solo-Webentwickler aus dem Münsterland. Ausbildung zum ITA, Praktikum bei d.velop, echte Projekte statt Theorie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="page-transition"></div>
+<div id="scroll-progress"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="gn">
+  <div class="gn-inner">
+    <a href="index.html" class="gn-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 120" aria-hidden="true" style="height: 20px; width: auto; flex-shrink: 0;"><path fill="#ffffff" d="M0 0 H24 V48 L72 0 V24 L36 60 L72 96 V120 L24 72 V120 H0 Z"/><rect fill="#0265cc" x="88" y="96" width="24" height="24"/></svg>
+      knecht.dev
+    </a>
+    <div class="gn-links">
+      <a href="leistungen.html">Leistungen</a>
+      <a href="preise.html">Preise</a>
+      <a href="ueber.html" class="nav-active">Über</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html" class="gn-cta">Projekt anfragen →</a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="mob-menu" aria-hidden="true">
+  <a href="leistungen.html" onclick="closeMenu()">Leistungen</a>
+  <a href="preise.html"     onclick="closeMenu()">Preise</a>
+  <a href="ueber.html"      onclick="closeMenu()">Über</a>
+  <a href="kontakt.html"    onclick="closeMenu()">Kontakt</a>
+  <a href="kontakt.html"    onclick="closeMenu()" class="accent">Projekt anfragen →</a>
+</div>
+
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero tile">
+  <div class="wrap">
+    <h1 class="t-lg page-hero-h1">Eine Person.<br>Keine Hierarchien.<br>Volle Verantwortung.</h1>
+    <p class="t-airy page-hero-sub" style="margin-top: 14px;">
+      Kein Projektmanager als Mittelmann. Du redest direkt mit dem Entwickler — der auch baut, was ihr besprochen habt.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ ÜBER ═══ -->
+<section class="tile tile-light">
+  <div class="wrap">
+    <div class="grid-about">
+      <div>
+        <h2 class="t-md" style="margin-bottom: 28px; color: var(--ink);">Wer steckt hinter knecht.dev?</h2>
+        <p class="t-body" style="color: var(--ink-muted); margin-bottom: 20px;">
+          Mein Name ist Santino, ich bin 18 und im Münsterland zuhause. Coden habe ich mit 15 angefangen — aus reiner Neugier, was eigentlich hinter den Websites steckt, die ich täglich nutze. Drei Jahre später baue ich genau solche Websites selbst.
+        </p>
+        <p class="t-body" style="color: var(--ink-muted); margin-bottom: 20px;">
+          Aktuell mache ich am Berufskolleg Bocholt-West die Ausbildung zum Staatlich geprüften Informationstechnischen Assistenten. Während meines Praktikums bei d.velop habe ich eine n8n-Integration entwickelt — Workflow-Automatisierung, bei der verschiedene Systeme miteinander reden, ohne dass jemand händisch Daten hin- und herkopiert. Das hat mir gezeigt, dass Webentwicklung mehr ist als hübsche Oberflächen.
+        </p>
+        <p class="t-body" style="color: var(--ink-muted); margin-bottom: 32px;">
+          Schule ist die eine Hälfte — die andere ist das, was ich nebenher mache: echte Projekte für echte Kunden bauen. Theorie ist gut, aber ohne Anwendung bleibt sie Theorie. Genau deshalb gibt es diese Seite.
+        </p>
+        <a href="kontakt.html" class="btn btn-primary">Kennenlernen →</a>
+      </div>
+      <div>
+        <div style="background: var(--parchment); border-radius: 18px; padding: 32px; border: 1px solid var(--hairline);">
+          <div style="padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--hairline);">
+            <div data-count="1" style="font-size: 48px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 6px;">1</div>
+            <div class="t-body" style="color: var(--ink-muted);">Ansprechpartner — für alles</div>
+          </div>
+          <div style="padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--hairline);">
+            <div data-count="24" data-suffix="h" style="font-size: 48px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 6px;">24h</div>
+            <div class="t-body" style="color: var(--ink-muted);">Reaktionszeit (meistens schneller)</div>
+          </div>
+          <div style="padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--hairline);">
+            <div style="font-size: 48px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 6px;">DE</div>
+            <div class="t-body" style="color: var(--ink-muted);">Server-Standort, DSGVO-konform</div>
+          </div>
+          <div>
+            <div style="font-size: 48px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 6px;">∞</div>
+            <div class="t-body" style="color: var(--ink-muted);">Direkter Draht — kein Ticket-System</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ TECH STACK ═══ -->
+<section class="tile tile-parch">
+  <div class="wrap">
+    <div style="margin-bottom: 40px;">
+      <h2 class="t-md" style="color: var(--ink); margin-bottom: 12px;">Womit ich arbeite.</h2>
+      <p class="t-body" style="color: var(--ink-muted); max-width: 540px;">
+        Kein Baukasten, kein Drag-and-Drop. Jede Zeile Code wird für das jeweilige Projekt geschrieben — nicht angepasst, nicht zusammengeklickt.
+      </p>
+    </div>
+    <div class="grid-stack">
+      <div class="stack-group">
+        <p class="stack-label">Frontend</p>
+        <span class="stack-tag">HTML / CSS</span>
+        <span class="stack-tag">JavaScript</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">Tailwind CSS</span>
+      </div>
+      <div class="stack-group">
+        <p class="stack-label">Backend</p>
+        <span class="stack-tag">Node.js</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">Flask / FastAPI</span>
+        <span class="stack-tag">Java</span>
+      </div>
+      <div class="stack-group">
+        <p class="stack-label">Datenbanken</p>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">SQLite</span>
+      </div>
+      <div class="stack-group">
+        <p class="stack-label">Extras</p>
+        <span class="stack-tag">Three.js</span>
+        <span class="stack-tag">n8n</span>
+        <span class="stack-tag">REST APIs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ WARUM SOLO-DEV ═══ -->
+<section class="tile tile-dark">
+  <div class="wrap">
+    <div class="grid-about">
+      <div>
+        <h2 class="t-md" style="color: #fff; margin-bottom: 24px;">Warum eine Person<br>und nicht eine Agentur?</h2>
+        <p class="t-body" style="color: rgba(255,255,255,0.65); margin-bottom: 24px;">
+          Eine Agentur hat fünf bis fünfzehn Leute, die an Ihrem Projekt arbeiten — und die meisten davon werden Sie nie kennenlernen. Das treibt den Preis, verlängert die Wege und sorgt dafür, dass am Ende keiner so richtig verantwortlich ist, wenn etwas nicht passt.
+        </p>
+        <p class="t-body" style="color: rgba(255,255,255,0.65); margin-bottom: 28px;">
+          Bei mir gibt es: eine Nummer, eine E-Mail-Adresse, eine Person. Sie erklären mir einmal, was Sie brauchen — und ich baue es. Keine Sales-Calls, keine Projektmanager, keine drei Feedback-Schleifen mit Leuten, die Ihren Laden noch nie von innen gesehen haben.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
+          <li style="display: flex; gap: 14px; align-items: flex-start;">
+            <span style="color: var(--blue-dark); font-weight: 700; flex-shrink: 0; margin-top: 2px;">→</span>
+            <div>
+              <span class="t-strong" style="color: #fff;">Preis.</span>
+              <span class="t-body" style="color: rgba(255,255,255,0.65);"> Kein Agentur-Overhead. Sie zahlen für die Arbeit, nicht für die Strukturen drumherum.</span>
+            </div>
+          </li>
+          <li style="display: flex; gap: 14px; align-items: flex-start;">
+            <span style="color: var(--blue-dark); font-weight: 700; flex-shrink: 0; margin-top: 2px;">→</span>
+            <div>
+              <span class="t-strong" style="color: #fff;">Direkter Kontakt.</span>
+              <span class="t-body" style="color: rgba(255,255,255,0.65);"> Sie reden mit dem, der baut. Wenn Sie eine Änderung wollen, schreiben Sie mir — nicht einem Account Manager.</span>
+            </div>
+          </li>
+          <li style="display: flex; gap: 14px; align-items: flex-start;">
+            <span style="color: var(--blue-dark); font-weight: 700; flex-shrink: 0; margin-top: 2px;">→</span>
+            <div>
+              <span class="t-strong" style="color: #fff;">Tempo.</span>
+              <span class="t-body" style="color: rgba(255,255,255,0.65);"> Eine Änderung dauert so lang, wie sie dauert — nicht so lang, bis sie durch drei Abteilungen durch ist.</span>
+            </div>
+          </li>
+          <li style="display: flex; gap: 14px; align-items: flex-start;">
+            <span style="color: var(--blue-dark); font-weight: 700; flex-shrink: 0; margin-top: 2px;">→</span>
+            <div>
+              <span class="t-strong" style="color: #fff;">Ehrlichkeit.</span>
+              <span class="t-body" style="color: rgba(255,255,255,0.65);"> Wenn etwas keinen Sinn ergibt, sage ich das. Wenn ich etwas nicht kann, sage ich das auch. Ich verspreche nichts, was ich nicht halten kann.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 32px;">
+          <p class="t-strong" style="color: #fff; margin-bottom: 16px;">Was Sie davon nicht haben:</p>
+          <p class="t-body" style="color: rgba(255,255,255,0.65); margin-bottom: 24px;">
+            Mehr als zwei Projekte gleichzeitig nehme ich nicht an. Wenn ich gerade voll bin, müssen Sie warten — oder einen anderen suchen. Ich mache lieber zwei Projekte richtig als fünf halbgar.
+          </p>
+          <div style="height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 24px;"></div>
+          <p class="t-body" style="color: rgba(255,255,255,0.5);">
+            Das klingt nach einem Nachteil. Für die, die gerade ein Projekt bei mir haben, ist es ein Vorteil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ WAS ICH NICHT MACHE ═══ -->
+<section class="tile tile-light">
+  <div class="wrap">
+    <div style="max-width: 720px; margin: 0 auto;">
+      <h2 class="t-md" style="color: var(--ink); margin-bottom: 12px;">Was ich nicht mache.</h2>
+      <p class="t-body" style="color: var(--ink-muted); margin-bottom: 28px;">
+        Damit hier keiner falsche Erwartungen mitnimmt. Für all das gibt es Spezialisten, die das besser machen als ich.
+      </p>
+      <ul class="no-list">
+        <li>WordPress-Anpassungen an vorhandenen Themes</li>
+        <li>Shopify-Stores</li>
+        <li>Reine Grafikdesign-Aufträge ohne Web-Bezug</li>
+        <li>SEO-Consulting ohne dazugehörige Website</li>
+        <li>Social-Media-Betreuung</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ CTA ═══ -->
+<section class="tile tile-dark" style="text-align: center;">
+  <div class="wrap">
+    <h2 class="t-lg" style="color: #fff; margin-bottom: 16px;">Klingt das nach einem Match?</h2>
+    <p class="t-body" style="color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 440px; margin-left: auto; margin-right: auto;">
+      30 Minuten reichen. Beschreib dein Projekt kurz und wir schauen gemeinsam, ob ich der Richtige bin.
+    </p>
+    <a href="kontakt.html" class="btn btn-primary" style="font-size: 17px; padding: 14px 32px;">Projekt anfragen →</a>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="background: var(--parchment); padding: 64px 0 40px 0;">
+  <div class="wrap-w">
+    <div class="grid-ft">
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 120" aria-hidden="true" style="height: 28px; width: auto; flex-shrink: 0;"><path fill="#1d1d1f" d="M0 0 H24 V48 L72 0 V24 L36 60 L72 96 V120 L24 72 V120 H0 Z"/><rect fill="#0265cc" x="88" y="96" width="24" height="24"/></svg>
+          <span style="font-size: 17px; font-weight: 600; color: var(--ink);">knecht.dev</span>
+        </div>
+        <p class="t-body" style="color: var(--ink-muted);">Webentwicklung aus dem Münsterland.</p>
+      </div>
+      <div>
+        <p class="t-cap-b" style="margin-bottom: 4px;">Navigation</p>
+        <a class="ft-link" href="leistungen.html">Leistungen</a>
+        <a class="ft-link" href="preise.html">Preise</a>
+        <a class="ft-link" href="ueber.html">Über</a>
+        <a class="ft-link" href="kontakt.html">Kontakt</a>
+      </div>
+      <div>
+        <p class="t-cap-b" style="margin-bottom: 4px;">Legal</p>
+        <a class="ft-link" href="#">Impressum</a>
+        <a class="ft-link" href="#">Datenschutz</a>
+        <a class="ft-link" href="#">AGB</a>
+      </div>
+      <div>
+        <p class="t-cap-b" style="margin-bottom: 4px;">Connect</p>
+        <a class="ft-link" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="ft-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="ft-link" href="mailto:hallo@knecht.dev">E-Mail</a>
+      </div>
+    </div>
+    <div style="height: 1px; background: var(--hairline); margin-bottom: 24px;"></div>
+    <p class="t-fine" style="color: var(--ink-muted);">© 2026 knecht.dev · Made with too much coffee in NRW.</p>
+  </div>
+</footer>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<script src="main.js"></script>
+</body>
+</html>

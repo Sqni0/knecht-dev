@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  knecht.dev — favicon / square avatar
+  160 × 160 square with safe-area padding around the 112 × 120 mark.
+  Padding: 24 horizontal, 20 vertical.
+  Suitable for: browser favicon, social profile pic, app icon source.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="t">
+  <title id="t">knecht.dev</title>
+  <g transform="translate(24 20)">
+    <path fill="#1d1d1f" d="M0 0 H24 V48 L72 0 V24 L36 60 L72 96 V120 L24 72 V120 H0 Z"/>
+    <rect fill="#0265cc" x="88" y="96" width="24" height="24"/>
+  </g>
+</svg>
