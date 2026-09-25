@@ -62,12 +62,15 @@ module.exports = async function handler(req, res) {
   const budgetLabel = budgetLabels[safe(budget)] || null;
   const timelineLabel = timelineLabels[safe(timeline)] || null;
 
+  // Entity-encode everything (incl. umlauts etc. as numeric refs) so the HTML
+  // renders correctly regardless of what charset a mail client assumes.
   const escapeHtml = (v) =>
     safe(v)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/"/g, '&quot;')
+      .replace(/[-￿]/g, (ch) => `&#${ch.codePointAt(0)};`);
 
   // TODO: swap to https://digitknecht.de once its TLS/DNS on this Vercel
   // project is confirmed live (currently fails handshake — MX/TXT for mail
@@ -101,7 +104,7 @@ module.exports = async function handler(req, res) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deine Anfrage ist angekommen — Digitknecht</title>
+<title>Deine Anfrage ist angekommen &mdash; Digitknecht</title>
 </head>
 <body style="margin:0; padding:0; background-color:#f5f5f7; font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f7; padding:32px 16px;">
@@ -121,7 +124,7 @@ module.exports = async function handler(req, res) {
                 Hallo ${escapeHtml(name)},
               </p>
               <p style="margin:0 0 16px 0; font-size:16px; line-height:1.6; font-weight:400; color:#1d1d1f;">
-                danke für deine Anfrage bei Digitknecht! Wir haben sie erhalten und melden uns innerhalb von 24&nbsp;Stunden persönlich bei dir.
+                danke f&uuml;r deine Anfrage bei Digitknecht! Wir haben sie erhalten und melden uns innerhalb von 24&nbsp;Stunden pers&ouml;nlich bei dir.
               </p>
             </td>
           </tr>
@@ -171,14 +174,14 @@ module.exports = async function handler(req, res) {
             <td style="padding:28px 40px 8px 40px;">
               <p style="margin:0 0 2px 0; font-size:16px; line-height:1.5; color:#1d1d1f;">Bis gleich,</p>
               <p style="margin:0; font-size:17px; font-weight:600; line-height:1.4; color:#1d1d1f;">Santino</p>
-              <p style="margin:2px 0 0 0; font-size:14px; line-height:1.4; color:#6e6e73;">Digitknecht · dein persönlicher Ansprechpartner</p>
+              <p style="margin:2px 0 0 0; font-size:14px; line-height:1.4; color:#6e6e73;">Digitknecht &middot; dein pers&ouml;nlicher Ansprechpartner</p>
             </td>
           </tr>
 
           <tr>
             <td style="padding:24px 40px 32px 40px; border-top:1px solid #e0e0e0;">
               <p style="margin:0 0 4px 0; font-size:12px; line-height:1.6; color:#6e6e73;">
-                Digitknecht &middot; Inhaber: Alexander Knecht &middot; Oyenstraße 27, 46325 Borken, Deutschland
+                Digitknecht &middot; Inhaber: Alexander Knecht &middot; Oyenstra&szlig;e 27, 46325 Borken, Deutschland
               </p>
               <p style="margin:0; font-size:12px; line-height:1.6; color:#6e6e73;">
                 <a href="mailto:info@digitknecht.de" style="color:#6e6e73; text-decoration:underline;">info@digitknecht.de</a>
@@ -201,7 +204,7 @@ module.exports = async function handler(req, res) {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json; charset=utf-8',
       },
       body: JSON.stringify(payload),
     });
@@ -228,7 +231,7 @@ module.exports = async function handler(req, res) {
         from: FROM_ADDRESS,
         to: [safe(email)],
         reply_to: TO_ADDRESS,
-        subject: 'Deine Anfrage ist angekommen — Digitknecht',
+        subject: 'Deine Anfrage ist angekommen - Digitknecht',
         text: confirmText,
         html: confirmHtml,
       });
