@@ -11,3 +11,10 @@ skills-lock.json
 # OS
 .DS_Store
 Thumbs.db
+
+.vercel
+
+# Env secrets
+.env
+.env.local
+.env*.local
