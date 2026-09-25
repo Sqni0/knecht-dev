@@ -37,7 +37,7 @@ module.exports = async function handler(req, res) {
   }
 
   const safe = (v) => (typeof v === 'string' ? v.trim() : '');
-  const text = [
+  const notifyText = [
     `Name: ${safe(name)}`,
     `E-Mail: ${safe(email)}`,
     `Projektart: ${safe(budget) || '–'}`,
@@ -47,26 +47,59 @@ module.exports = async function handler(req, res) {
     safe(message),
   ].join('\n');
 
-  try {
-    const resendRes = await fetch('https://api.resend.com/emails', {
+  const confirmText = [
+    `Hallo ${safe(name)},`,
+    '',
+    'danke für deine Anfrage bei Digitknecht! Wir haben sie erhalten und melden uns innerhalb von 24 Stunden persönlich bei dir.',
+    '',
+    'Deine Nachricht:',
+    safe(message),
+    '',
+    'Bis gleich,',
+    'Santino von Digitknecht',
+  ].join('\n');
+
+  const sendEmail = (payload) =>
+    fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        from: FROM_ADDRESS,
-        to: [TO_ADDRESS],
-        reply_to: safe(email),
-        subject: `Neue Anfrage von ${safe(name)} (Kontaktformular)`,
-        text,
-      }),
+      body: JSON.stringify(payload),
     });
 
-    if (!resendRes.ok) {
-      const errText = await resendRes.text();
-      console.error('Resend API error:', resendRes.status, errText);
+  try {
+    // Notification to us — must succeed, it's the whole point of the form.
+    const notifyRes = await sendEmail({
+      from: FROM_ADDRESS,
+      to: [TO_ADDRESS],
+      reply_to: safe(email),
+      subject: `Neue Anfrage von ${safe(name)} (Kontaktformular)`,
+      text: notifyText,
+    });
+
+    if (!notifyRes.ok) {
+      const errText = await notifyRes.text();
+      console.error('Resend API error (notify):', notifyRes.status, errText);
       return res.status(502).json({ ok: false, error: 'E-Mail konnte nicht gesendet werden.' });
+    }
+
+    // Confirmation to the sender — best-effort, doesn't fail the request.
+    try {
+      const confirmRes = await sendEmail({
+        from: FROM_ADDRESS,
+        to: [safe(email)],
+        reply_to: TO_ADDRESS,
+        subject: 'Deine Anfrage ist angekommen — Digitknecht',
+        text: confirmText,
+      });
+      if (!confirmRes.ok) {
+        const errText = await confirmRes.text();
+        console.error('Resend API error (confirmation):', confirmRes.status, errText);
+      }
+    } catch (err) {
+      console.error('Confirmation email failed:', err);
     }
 
     return res.status(200).json({ ok: true });
